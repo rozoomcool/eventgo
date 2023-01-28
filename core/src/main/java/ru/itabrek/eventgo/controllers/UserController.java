@@ -21,6 +21,11 @@ public class UserController {
         }
     }
 
+    @GetMapping("/hello")
+    public String someText(){
+        return "Hello";
+    }
+
     @GetMapping
     public ResponseEntity getAllUsers(@PathVariable Long id){
         try{
