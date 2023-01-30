@@ -12,7 +12,7 @@ import java.util.Optional;
 @Repository
 public interface UserRepository extends CrudRepository<User, Long> {
 
-    Optional<User> findUserByNickname(String nickname);
+    Optional<User> findByNickname(String nickname);
 
     @Transactional
     @Modifying
