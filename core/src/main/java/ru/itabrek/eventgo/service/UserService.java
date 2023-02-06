@@ -44,4 +44,12 @@ public class UserService {
         }
         return user;
     }
+
+//    public Iterable<User> search(String arg){
+//        return repo.search(arg);
+//    }
+
+    public Iterable<User> getAll(){
+        return repo.findAll();
+    }
 }

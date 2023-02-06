@@ -18,4 +18,9 @@ public interface UserRepository extends CrudRepository<User, Long> {
     @Modifying
     @Query("UPDATE User u SET u.email = ?1, u.phone = ?2 WHERE u.nickname = ?3")
     void update(String email, Long phone, String nickname);
+
+//    @Transactional
+//    @Modifying
+//    @Query("SELECT * FROM User WHERE nickname LIKE '${arg}%' OR firstname LIKE '${arg}%' OR lastname LIKE '${arg}%'")
+//    Iterable<User> search(String arg);
 }

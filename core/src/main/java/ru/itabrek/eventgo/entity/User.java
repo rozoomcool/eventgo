@@ -31,7 +31,7 @@ public class User {
     @Length(min = 2, max = 24, message = "INCORRECT LENGTH OF FIRSTNAME")
     private String firstname;
 
-    @Column(name = "firstname", nullable = false, length = 24)
+    @Column(name = "lastname", nullable = false, length = 24)
     @NotBlank(message = "INCORRECT NICKNAME")
     @Length(min = 2, max = 24, message = "INCORRECT LENGTH OF LASTNAME")
     private String lastname;
