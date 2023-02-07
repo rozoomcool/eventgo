@@ -13,3 +13,8 @@ spring:
       show-sql: true
       dialect:
         MySQLDialect: org.hibernate.dialect.MySQLDialect
+
+jwt:
+  secret:
+    access: &E)H@McQfTjWnZr4u7x!A%D*G-JaNdRg
+    refresh: gVkYp3s6v9y$B&E)H+MbQeThWmZq4t7w!z%C*F-JaNcRfUjXn2r5u8x/A?D(G+KbPeSgVkYp3s6v9y$B&E)H@McQfTjWmZq4t7w!z%C*F-JaNdRgUkXp2r5u8x/A?D(G
