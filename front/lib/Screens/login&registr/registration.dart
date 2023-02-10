@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:eventgo/Screens/login&registr/components/textfield.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
@@ -12,10 +14,26 @@ class RegistrationPage extends StatelessWidget {
 
   void signUserUp() async {
     try {
+      //URI запроса
       var url = Uri.parse("http://localhost:80/register");
-      var responce = await http.get(url);
-      print("Responce status: ${responce.statusCode}");
-      print("Responce body: ${responce.body}");
+      //Header запроса
+      //content-type служит для задания кодировки сообщению
+      //без него сервак не обработает запрос
+      Map<String, String> headers = {'Content-Type': 'application/json'};
+      //Тело запроса в json формате
+      final msg = jsonEncode({
+        "firstname": userNameController.text,
+        "lastname": userSurnameController.text,
+        "nickname": userNickNameController.text,
+        "password": passwordController.text
+      });
+      //Сам запрос
+      var response = await http.post(url, body: msg, headers: headers);
+      //Ответ сервера на наш запрос
+      //Статус код служит для обобщения ошибок(200 - все ок, 500 - ошибки сервера и тд)
+      print('${response.statusCode}');
+      //Тело ответа на наш запрос
+      print('${response.body}');
     } catch (error) {
       print('$error');
     }
