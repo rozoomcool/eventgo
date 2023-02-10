@@ -19,10 +19,10 @@ import java.util.function.Function;
 @Service
 public class JwtService {
 
-    @Value("{jwt.secret.access}")
+    @Value("${jwt.secret.access}")
     private String JWT_ACCESS_KEY;
 
-    @Value("{jwt.secret.refresh}")
+    @Value("${jwt.secret.refresh}")
     private String JWT_REFRESH_KEY;
 
     public String extractUsername(String token) {
